@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    items=`find ~/code -maxdepth 3 -mindepth 1 -type d`
+    selected=`echo "$items" | fzf`
+fi
+
+echo "$selected"
