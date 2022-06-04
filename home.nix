@@ -12,10 +12,8 @@ in
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    nixpkgs-fmt
     zsh
     oh-my-zsh
-    git
     htop
     curl
     wget
@@ -32,7 +30,6 @@ in
     git-crypt
     direnv
     dig
-    rnix-lsp
     unstable.neovim
     nodejs
   ];
