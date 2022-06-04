@@ -29,7 +29,6 @@ in
     bitwarden-cli
     git-crypt
     direnv
-    dig
     unstable.neovim
     nodejs
   ];
@@ -133,7 +132,15 @@ in
 
   home.file = {
     ".gnupg/pubkey.pub".source = config.lib.file.mkOutOfStoreSymlink ./home/gnupg/f.pub;
-    ".gnupg/gpg-agent.conf".source = config.lib.file.mkOutOfStoreSymlink ./home/gnupg/gpg-agent.conf;
+    ".gnupg/gpg-agent.conf".text = ''
+      # https://github.com/drduh/config/blob/master/gpg-agent.conf
+      # https://www.gnupg.org/documentation/manuals/gnupg/Agent-Options.html
+      enable-ssh-support
+      ttyname $GPG_TTY
+      default-cache-ttl 60
+      max-cache-ttl 120
+      pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac
+    '';
     ".local/bin/dir_select".source = config.lib.file.mkOutOfStoreSymlink ./home/zsh/dir_select;
 
     # TODO: implement secrets
