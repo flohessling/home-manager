@@ -2,6 +2,15 @@
 
 This repository contains my .nixpkgs to setup and restore my configuration using nix-darwin.
 
+### Prerequisites 
+
+Since not all required packages are available via nixpkgs some are installed via brew beforehand.
+
+```shell
+brew install --cask iterm2
+brew install awsume
+```
+
 ### Install nix, nix-darwin & home-manager channel
 
 ```shell
