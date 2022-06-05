@@ -23,6 +23,7 @@ in
     fzf
     gnupg
     unstable.awscli2
+    unstable.ssm-session-manager-plugin
     unstable.terraform_1
     glab
     docker-compose
