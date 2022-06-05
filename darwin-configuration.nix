@@ -5,19 +5,7 @@
   ];
 
   environment.systemPackages = with pkgs; [ 
-  # TODO: configure neovim
-  #  (neovim.override {
-  #    vimAlias = true;
-  #    configure = {
-  #      packages.myPlugins= with vimPlugins; {
-  #        start = [ vim-go vim-nix ]
-  #        opt = [ ];
-  #      };
-  #      customRC = ''
-  #        " custom vimrc goes here
-  #      '';
-  #    };
-  #  })
+    # define packages available on system level for all users
   ];
 
   # auto upgrade nix package and the daemon service
@@ -47,7 +35,4 @@
 
   # Add ability to used TouchID for sudo authentication
   # security.pam.enableSudoTouchIdAuth = true;
-
-  system.defaults.NSGlobalDomain.InitialKeyRepeat = 100;
-  system.defaults.NSGlobalDomain.KeyRepeat = 250;
 }
