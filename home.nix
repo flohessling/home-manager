@@ -143,6 +143,11 @@ in
     '';
     ".local/bin/dir_select".source = config.lib.file.mkOutOfStoreSymlink ./home/zsh/dir_select;
 
-    # TODO: implement secrets
+    # secrets
+    ".aws/config".source = config.lib.file.mkOutOfStoreSymlink ./secrets/aws/config;
+    ".aws/credentials".source = config.lib.file.mkOutOfStoreSymlink ./secrets/aws/credentials;
+    ".ssh/cloud".source = config.lib.file.mkOutOfStoreSymlink ./secrets/ssh/cloud;
+    ".ssh/config".source = config.lib.file.mkOutOfStoreSymlink ./secrets/ssh/config;
+    ".netrc".source = config.lib.file.mkOutOfStoreSymlink ./secrets/netrc;
   };
 }
