@@ -25,6 +25,7 @@ in
     unstable.awscli2
     unstable.ssm-session-manager-plugin
     unstable.terraform_1
+    unstable.temporal-cli
     glab
     docker-compose
     bitwarden-cli
