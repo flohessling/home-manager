@@ -32,6 +32,7 @@ in
     git-crypt
     direnv
     unstable.neovim
+    natscli
     nodejs
   ];
 
