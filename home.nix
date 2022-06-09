@@ -24,7 +24,7 @@ in
     gnupg
     unstable.awscli2
     unstable.ssm-session-manager-plugin
-    unstable.terraform_1
+    # unstable.terraform_1
     unstable.temporal-cli
     glab
     docker-compose
@@ -145,6 +145,7 @@ in
       pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac
     '';
     ".local/bin/dir_select".source = config.lib.file.mkOutOfStoreSymlink ./home/zsh/dir_select;
+    ".local/bin/update-tf.sh".source = config.lib.file.mkOutOfStoreSymlink ./home/zsh/update-tf.sh;
 
     # secrets
     ".aws/config".source = config.lib.file.mkOutOfStoreSymlink ./secrets/aws/config;
