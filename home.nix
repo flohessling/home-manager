@@ -118,8 +118,8 @@ in
     shellAliases = {
       ykrestart = "gpgconf --reload scdaemon && gpgconf --kill gpg-agent && gpg-connect-agent updatestartuptty /bye";
       awsume = ". awsume";
-      vi = "nvim";
-      vim = "nvim";
+      vi = "lvim";
+      vim = "lvim";
     };
     initExtra = ''
       # yubikey setup
