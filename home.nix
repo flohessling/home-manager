@@ -120,6 +120,7 @@ in
       awsume = ". awsume";
       vi = "lvim";
       vim = "lvim";
+      gpo = "git pull origin $(git_current_branch)";
     };
     initExtra = ''
       # yubikey setup
