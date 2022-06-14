@@ -23,15 +23,15 @@ in
     fzf
     gnupg
     unstable.awscli2
-    unstable.ssm-session-manager-plugin
+    ssm-session-manager-plugin
     # unstable.terraform_1
-    unstable.temporal-cli
+    temporal-cli
     glab
     docker-compose
     bitwarden-cli
     git-crypt
     direnv
-    unstable.neovim
+    neovim
     natscli
     nodejs
   ];
