@@ -15,7 +15,6 @@ in
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    coreutils
     zsh
     oh-my-zsh
     htop
