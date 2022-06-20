@@ -115,7 +115,7 @@ in
       plugins = ["git" "docker" "docker-compose" "aws"];
     };
     localVariables = {
-      EDITOR = "nvim";
+      EDITOR = "lvim";
       PATH = "$PATH:$GOPATH/bin:$HOME/.local/bin";
     };
     sessionVariables = {
