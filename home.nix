@@ -6,12 +6,16 @@ in
   home.stateVersion = "22.05";
   home.username = "f";
   home.homeDirectory = "/Users/f";
+  home.sessionVariables = {
+    EDITOR = "lvim";
+  };
 
   programs.home-manager.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
+    coreutils
     zsh
     oh-my-zsh
     htop
@@ -22,7 +26,9 @@ in
     jq
     fzf
     gnupg
-    unstable.awscli2
+    tmux
+    # unstable.awscli2
+    awscli
     ssm-session-manager-plugin
     # unstable.terraform_1
     temporal-cli

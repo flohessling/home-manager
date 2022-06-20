@@ -21,3 +21,10 @@ ecsexec () {
     taskID=$(aws ecs list-tasks --cluster shopware-application --service-name $serviceName-$1 | jq '.taskArns[]' -r | cut -d'/' -f3 | fzf)
     aws ecs execute-command --interactive --command /bin/ash --task $taskID --cluster shopware-application --container $containerName
 }
+
+ecr() {
+    region=$(aws configure get region)
+    aws ecr get-login-password --region $region \
+      | docker login --password-stdin --username AWS \
+          "$(aws sts get-caller-identity --query Account --output text).dkr.ecr.$region.amazonaws.com"
+}
