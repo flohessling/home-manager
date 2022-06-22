@@ -27,9 +27,7 @@ in
     gnupg
     tmux
     # unstable.awscli2
-    awscli
     ssm-session-manager-plugin
-    # unstable.terraform_1
     temporal-cli
     glab
     docker-compose
