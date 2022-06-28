@@ -26,6 +26,7 @@ in
     fzf
     gnupg
     tmux
+    bat
     # unstable.awscli2
     ssm-session-manager-plugin
     temporal-cli
