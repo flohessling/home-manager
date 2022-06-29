@@ -151,6 +151,7 @@ in
     '';
     ".local/bin/dir_select".source = config.lib.file.mkOutOfStoreSymlink ./home/zsh/dir_select;
     ".local/bin/update-tf.sh".source = config.lib.file.mkOutOfStoreSymlink ./home/zsh/update-tf.sh;
+    ".config/lvim/config.lua".source = config.lib.file.mkOutOfStoreSymlink ./home/lvim/config.lua;
 
     # secrets
     ".aws/config".source = config.lib.file.mkOutOfStoreSymlink ./secrets/aws/config;
