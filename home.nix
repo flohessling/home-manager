@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }:
 let
   unstable = import <unstable> { config = { allowUnfree = true; }; };
+  php = pkgs.php80.buildEnv { extraConfig = "memory_limit = 2G"; };
 in
 {
   home.stateVersion = "22.05";
@@ -38,6 +39,10 @@ in
     neovim
     natscli
     nodejs
+    php
+    phpPackages.composer
+    phpPackages.psalm
+    phpPackages.phpstan
   ];
 
   programs.direnv.enable = true;
