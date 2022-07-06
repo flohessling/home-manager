@@ -39,6 +39,7 @@ in
     neovim
     natscli
     nodejs
+    nodePackages.pnpm
     php
     phpPackages.composer
     phpPackages.psalm
