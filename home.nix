@@ -44,6 +44,8 @@ in
     phpPackages.composer
     phpPackages.psalm
     phpPackages.phpstan
+    wireguard-tools
+    wireguard-go
   ];
 
   programs.direnv.enable = true;
@@ -165,5 +167,7 @@ in
     ".ssh/cloud".source = config.lib.file.mkOutOfStoreSymlink ./secrets/ssh/cloud;
     ".ssh/config".source = config.lib.file.mkOutOfStoreSymlink ./secrets/ssh/config;
     ".netrc".source = config.lib.file.mkOutOfStoreSymlink ./secrets/netrc;
+    ".config/wireguard/staging.private-key.gpg".source = config.lib.file.mkOutOfStoreSymlink ./secrets/wireguard/staging.private-key.gpg;
+    ".config/wireguard/prod.private-key.gpg".source = config.lib.file.mkOutOfStoreSymlink ./secrets/wireguard/prod.private-key.gpg;
   };
 }
