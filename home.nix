@@ -133,6 +133,10 @@ in
       vi = "lvim";
       vim = "lvim";
       gpo = "git pull origin $(git_current_branch)";
+      wgup-staging = "sudo wg-quick up staging";
+      wgup-prod = "sudo wg-quick up prod";
+      wgdown-staging = "sudo wg-quick down staging";
+      wgdown-prod = "sudo wg-quick down prod";
     };
     initExtra = ''
       # yubikey setup
