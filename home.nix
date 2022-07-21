@@ -22,6 +22,7 @@ in
     curl
     wget
     unzip
+    ripgrep
     zip
     jq
     fzf
