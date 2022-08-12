@@ -39,6 +39,7 @@ in
     direnv
     neovim
     natscli
+    pgcli
     nodejs
     nodePackages.pnpm
     php
