@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 let
   unstable = import <unstable> { config = { allowUnfree = true; }; };
-  php = pkgs.php80.buildEnv { extraConfig = "memory_limit = 2G"; };
+  php = pkgs.php81.buildEnv { extraConfig = "memory_limit = 2G"; };
 in
 {
   home.stateVersion = "22.05";
@@ -30,16 +30,16 @@ in
     tmux
     bat
     # unstable.awscli2
-    ssm-session-manager-plugin
+    unstable.ssm-session-manager-plugin
     temporal-cli
     glab
     docker-compose
     bitwarden-cli
     git-crypt
     direnv
-    neovim
+    unstable.neovim
     natscli
-    pgcli
+    # pgcli
     nodejs
     nodePackages.pnpm
     php

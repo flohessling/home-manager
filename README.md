@@ -21,25 +21,24 @@ nix-channel --add https://github.com/nix-community/home-manager/archive/master.t
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
 nix-channel --update
 
-# let nix-darwin handle /etc/nix/nix.conf
-sudo mv /etc/nix/nix.conf /etc/nix/.nix-darwin.bkp.nix.conf
+# if not on NixOS execute
+export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
 
-# install nix-darwin
-nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
-./result/bin/darwin-installer
+# install home-manager
+nix-shell '<home-manager>' -A install
 ```
 
 ### Clone this repository
 
 ```shell
-rm -rf ~/.nixpkgs/
-git clone https://github.com/f0x7C0/.nixpkgs.git ~/.nixpkgs/
+rm -rf ~/.config/nixpkgs/
+git clone https://github.com/f0x7C0/.nixpkgs.git ~/.config/nixpkgs/
 ```
 
-### Apply nix-darwin configuration
+### Apply nix home-manager configuration
 
 ```shell
-darwin-rebuild switch
+home-manager switch
 ```
 
 ### Decrypt secrets
