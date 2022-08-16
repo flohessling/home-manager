@@ -29,6 +29,7 @@ in
     gnupg
     tmux
     bat
+    tldr
     # unstable.awscli2
     unstable.ssm-session-manager-plugin
     temporal-cli
