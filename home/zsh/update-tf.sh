@@ -24,4 +24,4 @@ cd ~/.local/bin
 mv terraform terraform_${OLDVERSION:1}
 mv tf-update/terraform .
 
-echo "downloaded new terraform version $VERSION to $(pwd)/terraform"
+echo "updated $(pwd)/terraform to version $VERSION"
