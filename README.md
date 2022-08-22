@@ -1,17 +1,17 @@
 # my .nixpkgs repository
 
-This repository contains my .nixpkgs to setup and restore my configuration using nix-darwin.
+This repository contains my .nixpkgs to setup and restore my configuration using nix home-manager.
 
 ### Prerequisites 
 
 Since not all required packages are available via nixpkgs some are installed via brew beforehand.
 
 ```shell
-brew install --cask iterm2
+brew install --cask iterm2 vscodium obsidian font-jetbrains-mono-nerd-font
 brew install awscli awsume
 ```
 
-### Install nix, nix-darwin & home-manager channel
+### Install nix & home-manager
 
 ```shell
 # install nix
