@@ -6,9 +6,23 @@ This repository contains my .nixpkgs to setup and restore my configuration using
 
 Since not all required packages are available via nixpkgs some are installed via brew beforehand.
 
+#### Install homebrew
+
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+#### Install homebrew formulae and casks
+
 ```shell
 brew install --cask iterm2 vscodium obsidian font-jetbrains-mono-nerd-font
 brew install awscli awsume
+```
+
+#### Install lunarvim
+
+```shell
+bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 ```
 
 ### Install nix & home-manager
