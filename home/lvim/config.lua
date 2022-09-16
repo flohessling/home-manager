@@ -67,7 +67,8 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
-lvim.lsp.automatic_servers_installation = true
+-- automatic lsp server installation
+-- lvim.lsp.automatic_servers_installation = true
 -- lvim.lsp.installer.setup.automatic_installation = true
 
 -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
