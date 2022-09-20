@@ -30,6 +30,7 @@ in
     tmux
     bat
     tldr
+    tree
     # unstable.awscli2
     unstable.ssm-session-manager-plugin
     temporal-cli
