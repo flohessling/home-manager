@@ -15,7 +15,7 @@ Since not all required packages are available via nixpkgs some are installed via
 #### Install homebrew formulae and casks
 
 ```shell
-brew install --cask iterm2 vscodium obsidian font-jetbrains-mono-nerd-font
+brew install --cask iterm2 vscodium obsidian postman font-jetbrains-mono-nerd-font
 brew install awscli awsume
 ```
 
