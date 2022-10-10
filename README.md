@@ -63,3 +63,13 @@ The secrets are en- / decrypted using GPG, which should be installed by now
 git-crypt unlock
 ```
 
+---
+### Upgrading nix 
+
+Upgrading nix on macOS requires the restart of the daemon
+
+```shell
+sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'
+
+```
+
