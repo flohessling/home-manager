@@ -31,6 +31,7 @@ in
     bat
     tldr
     tree
+    ffmpeg
     # unstable.awscli2
     unstable.ssm-session-manager-plugin
     temporal-cli
