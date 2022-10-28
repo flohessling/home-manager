@@ -51,6 +51,7 @@ in
     phpPackages.phpstan
     wireguard-tools
     wireguard-go
+    yubikey-manager
   ];
 
   programs.direnv.enable = true;
