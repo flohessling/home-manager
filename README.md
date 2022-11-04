@@ -72,4 +72,15 @@ Upgrading nix on macOS requires the restart of the daemon
 sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'
 
 ```
+### Troubleshooting nix
+
+After upgrading macOS `/etc/zshrc` is reset and loses the Nix specific lines that have to be added again to get `nix` running again.
+
+```shell
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix
+```
 
