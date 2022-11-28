@@ -53,6 +53,7 @@ in
     wireguard-tools
     wireguard-go
     yubikey-manager
+    speedtest-cli
   ];
 
   programs.direnv.enable = true;
