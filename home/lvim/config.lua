@@ -41,7 +41,6 @@ lvim.builtin.which_key.mappings["t"] = {
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.actions.open_file.resize_window = true
@@ -66,6 +65,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
+
 
 -- automatic lsp server installation
 -- lvim.lsp.automatic_servers_installation = true
@@ -115,7 +115,13 @@ lvim.plugins = {
     { "vim-test/vim-test" },
     { "nelsyeung/twig.vim" },
     { "folke/trouble.nvim" },
-    { "folke/tokyonight.nvim" },
+    -- configure treesitter to display function and current location at the top
+    {
+        "nvim-treesitter/nvim-treesitter-context",
+        config = function()
+            require 'treesitter-context'.setup {}
+        end,
+    },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
