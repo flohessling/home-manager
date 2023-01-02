@@ -8,7 +8,7 @@ in
   home.username = "f";
   home.homeDirectory = "/Users/f";
   home.sessionVariables = {
-    EDITOR = "lvim";
+    EDITOR = "nvim";
   };
 
   programs.home-manager.enable = true;
@@ -129,19 +129,21 @@ in
       plugins = ["git" "docker" "docker-compose" "aws"];
     };
     localVariables = {
-      EDITOR = "lvim";
+      EDITOR = "nvim";
       PATH = "$PATH:$GOPATH/bin:$HOME/.local/bin";
     };
     sessionVariables = {
       DOCKER_BUILDKIT = 1;
+      XDG_CONFIG_HOME = "$HOME/.config";
+      MANPAGER = "nvim +Man!";
     };
     shellAliases = {
       cat = "bat -pp --theme \"Visual Studio Dark+\"";
       catt = "bat --theme \"Visual Studio Dark+\"";
       ykrestart = "gpgconf --reload scdaemon && gpgconf --kill gpg-agent && gpg-connect-agent updatestartuptty /bye";
       awsume = ". awsume";
-      vi = "lvim";
-      vim = "lvim";
+      vi = "nvim";
+      vim = "nvim";
       gpo = "git pull origin $(git_current_branch)";
       lg = "lazygit";
       wgup-staging = "sudo wg-quick up staging";
@@ -175,6 +177,7 @@ in
     ".local/bin/dir_select".source = config.lib.file.mkOutOfStoreSymlink ./home/zsh/dir_select;
     ".local/bin/update-tf.sh".source = config.lib.file.mkOutOfStoreSymlink ./home/zsh/update-tf.sh;
     ".config/lvim/config.lua".source = config.lib.file.mkOutOfStoreSymlink ./home/lvim/config.lua;
+    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./home/nvim;
 
     # secrets
     ".aws/config".source = config.lib.file.mkOutOfStoreSymlink ./secrets/aws/config;
