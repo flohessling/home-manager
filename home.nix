@@ -4,7 +4,7 @@ let
   php = pkgs.php81.buildEnv { extraConfig = "memory_limit = 2G"; };
 in
 {
-  home.stateVersion = "22.05";
+  home.stateVersion = "22.11";
   home.username = "f";
   home.homeDirectory = "/Users/f";
   home.sessionVariables = {
@@ -161,6 +161,9 @@ in
 
       # custom scripts
       ${builtins.readFile ./home/zsh/scripts.sh}
+
+      # custom secret scripts
+      ${builtins.readFile ./secrets/zsh/scripts.sh}
     '';
   };
 
