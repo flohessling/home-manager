@@ -43,7 +43,6 @@ in
     direnv
     unstable.neovim
     natscli
-    # pgcli
     nodejs
     nodePackages.pnpm
     php
@@ -54,6 +53,8 @@ in
     wireguard-go
     yubikey-manager
     speedtest-cli
+    postgresql
+    mysql80
   ];
 
   programs.direnv.enable = true;
