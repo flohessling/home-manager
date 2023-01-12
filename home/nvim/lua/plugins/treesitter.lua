@@ -12,7 +12,7 @@ local M = {
     config = function()
         require("nvim-treesitter.configs").setup({
             -- Add languages to be installed here that you want installed for treesitter
-            ensure_installed = { "go", "lua", "python", "rust", "typescript", "help", "hcl", "terraform", "nix", "bash" },
+            ensure_installed = { "go", "lua", "python", "rust", "typescript", "help", "hcl", "terraform", "nix", "bash", "javascript" },
 
             highlight = { enable = true },
             indent = { enable = true },

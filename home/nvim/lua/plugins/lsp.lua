@@ -24,6 +24,7 @@ M.config = function()
         'jsonls',
         'bashls',
         'intelephense',
+        'tsserver',
     }
 
     -- LSP settings.
