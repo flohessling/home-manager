@@ -55,6 +55,7 @@ in
     speedtest-cli
     postgresql
     mysql80
+    nmap
   ];
 
   programs.direnv.enable = true;
