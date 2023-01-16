@@ -141,7 +141,7 @@ in
     };
     shellAliases = {
       cat = "bat -pp --theme \"Visual Studio Dark+\"";
-      catt = "bat --theme \"Visual Studio Dark+\"";
+      bcat = "bat --theme \"Visual Studio Dark+\"";
       ykrestart = "gpgconf --reload scdaemon && gpgconf --kill gpg-agent && gpg-connect-agent updatestartuptty /bye";
       awsume = ". awsume";
       vi = "nvim";
