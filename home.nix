@@ -63,7 +63,7 @@ in
 
   programs.go = {
     enable = true;
-    package = unstable.go_1_19;
+    package = pkgs.go_1_20;
     goPrivate = [ "gitlab.shopware.com" ];
     goPath = "code/go";
   };
