@@ -13,6 +13,7 @@ function M.config()
         italic_comments = true, -- enable italic comments
         disable_nvimtree_bg = true, -- disable nvim-tree background color
     })
+    vim.cmd("colorscheme vscode")
 end
 
 return M

@@ -19,7 +19,7 @@ M.config = function()
         'rust_analyzer',
         'terraformls',
         'tflint',
-        'sumneko_lua',
+        'lua_ls',
         'yamlls',
         'jsonls',
         'bashls',
@@ -86,7 +86,7 @@ M.config = function()
 
     local lsp_settings = {
         -- lua
-        sumneko_lua = {
+        lua_ls = {
             settings = {
                 Lua = {
                     workspace = { checkThirdParty = false },
