@@ -1,7 +1,7 @@
 return {
     {
         "Mofiqul/vscode.nvim",
-        enabled = false,
+        enabled = true,
         lazy = false,
         priority = 999,
         config = function()
@@ -16,7 +16,7 @@ return {
     },
     {
         "catppuccin/nvim",
-        enabled = true,
+        enabled = false,
         lazy = false,
         priority = 999,
         config = function ()

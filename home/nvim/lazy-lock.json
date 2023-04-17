@@ -16,7 +16,6 @@
   "mason-lspconfig.nvim": { "branch": "main", "commit": "6c8f7afd6162fa27719f9da9792e4314da41c501" },
   "mason.nvim": { "branch": "main", "commit": "e24d594dc7dbe08305a881c8e7348d4d45445ffe" },
   "null-ls.nvim": { "branch": "main", "commit": "f8ffcd7cb8fb3325c711d459152ef132b5b65aed" },
-  "nvim": { "branch": "main", "commit": "fa9a4465672fa81c06b23634c0f04f6a5d622211" },
   "nvim-cmp": { "branch": "main", "commit": "777450fd0ae289463a14481673e26246b5e38bf2" },
   "nvim-coverage": { "branch": "main", "commit": "e542b6afbc7d92acd6502e15124ca2f376964b76" },
   "nvim-lspconfig": { "branch": "master", "commit": "eddaef928c1e1dd79a96f5db45f2fd7f2efe7ea0" },
@@ -36,5 +35,6 @@
   "vim-illuminate": { "branch": "master", "commit": "a2907275a6899c570d16e95b9db5fd921c167502" },
   "vim-lastplace": { "branch": "master", "commit": "cef9d62165cd26c3c2b881528a5290a84347059e" },
   "vim-sleuth": { "branch": "master", "commit": "1cc4557420f215d02c4d2645a748a816c220e99b" },
-  "vim-test": { "branch": "master", "commit": "8183037eccad54deb2100a9665157e4405fa4702" }
+  "vim-test": { "branch": "master", "commit": "8183037eccad54deb2100a9665157e4405fa4702" },
+  "vscode.nvim": { "branch": "main", "commit": "d89fa59a78eda50158d94bde059953bda2f56142" }
 }
