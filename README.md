@@ -46,7 +46,7 @@ nix-shell '<home-manager>' -A install
 
 ```shell
 rm -rf ~/.config/nixpkgs/
-git clone https://github.com/f0x7C0/.nixpkgs.git ~/.config/nixpkgs/
+git clone https://github.com/flohessling/.nixpkgs.git ~/.config/nixpkgs/
 ```
 
 ### Apply nix home-manager configuration
