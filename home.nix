@@ -181,6 +181,7 @@ in
     '';
     ".local/bin/dir_select".source = config.lib.file.mkOutOfStoreSymlink ./home/zsh/dir_select;
     ".local/bin/update-tf.sh".source = config.lib.file.mkOutOfStoreSymlink ./home/zsh/update-tf.sh;
+    ".local/bin/update-tg.sh".source = config.lib.file.mkOutOfStoreSymlink ./home/zsh/update-tg.sh;
     ".config/lvim/config.lua".source = config.lib.file.mkOutOfStoreSymlink ./home/lvim/config.lua;
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./home/nvim;
 

@@ -1,6 +1,6 @@
-# my .nixpkgs repository
+# my nix home-manager repository
 
-This repository contains my .nixpkgs to setup and restore my configuration using nix home-manager.
+This repository contains my home-manager configuration to setup or restore my mac environment.
 
 ### Prerequisites 
 
@@ -45,8 +45,8 @@ nix-shell '<home-manager>' -A install
 ### Clone this repository
 
 ```shell
-rm -rf ~/.config/nixpkgs/
-git clone https://github.com/flohessling/.nixpkgs.git ~/.config/nixpkgs/
+rm -rf ~/.config/home-manager/
+git clone https://github.com/flohessling/.nixpkgs.git ~/.config/home-manager/
 ```
 
 ### Apply nix home-manager configuration
