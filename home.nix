@@ -56,6 +56,7 @@ in
     postgresql
     mysql80
     nmap
+    unstable.shopware-cli
   ];
 
   programs.direnv.enable = true;
