@@ -38,6 +38,8 @@ in
     temporal-cli
     glab
     docker-compose
+    docker-client
+    unstable.colima
     bitwarden-cli
     git-crypt
     direnv
