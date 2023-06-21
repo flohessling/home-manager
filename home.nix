@@ -4,7 +4,7 @@ let
   php = pkgs.php81.buildEnv { extraConfig = "memory_limit = 2G"; };
 in
 {
-  home.stateVersion = "22.11";
+  home.stateVersion = "23.05";
   home.username = "f";
   home.homeDirectory = "/Users/f";
   home.sessionVariables = {
