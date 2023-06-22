@@ -163,9 +163,6 @@ in
       export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
       gpgconf --launch gpg-agent
 
-      # custom scripts
-      ${builtins.readFile ./home/zsh/scripts.sh}
-
       # custom secret scripts
       ${builtins.readFile ./secrets/zsh/scripts.sh}
     '';
