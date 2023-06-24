@@ -84,3 +84,8 @@ fi
 # End Nix
 ```
 
+macOS updates also tend to reset the `pam.d/sudo` file to use touchID for sudo commands.
+Adding this line to `/etc/pam.d/sudo` enables touchID for sudo password prompts:
+```
+auth       sufficient     pam_tid.so
+```
