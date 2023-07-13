@@ -7,7 +7,6 @@ local M = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "b0o/schemastore.nvim",
-        "j-hui/fidget.nvim",
     },
 }
 
@@ -25,6 +24,7 @@ M.config = function()
         'bashls',
         'intelephense',
         'tsserver',
+        'eslint',
     }
 
     -- LSP settings.
@@ -158,9 +158,13 @@ M.config = function()
                         shadow = true,
                     },
                     semanticTokens = true,
-                }
+                },
             },
-        }
+        },
+
+        eslint = {
+            root_dir = require("lspconfig/util").root_pattern("package.json", ".eslintrc", ".git"),
+        },
     }
 
     for _, lsp in ipairs(servers) do
@@ -173,9 +177,6 @@ M.config = function()
         end
         require('lspconfig')[lsp].setup(options)
     end
-
-    require('fidget').setup()
 end
-
 
 return M
