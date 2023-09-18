@@ -7,9 +7,7 @@ in
   home.stateVersion = "23.05";
   home.username = "f";
   home.homeDirectory = "/Users/f";
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  home.sessionVariables = { EDITOR = "nvim"; };
 
   programs.home-manager.enable = true;
 

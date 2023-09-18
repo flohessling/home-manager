@@ -16,7 +16,7 @@ Since not all required packages are available via nixpkgs some are installed via
 
 ```shell
 brew install --cask iterm2 vscodium obsidian postman font-jetbrains-mono-nerd-font
-brew install awscli awsume
+brew install awscli awsume 1password-cli
 ```
 
 #### Install lunarvim
