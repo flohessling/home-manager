@@ -85,7 +85,8 @@ in
     enable = true;
     package = unstable.git;
 
-    signing.key = "0x48F495E9FD7D11E2";
+    # signing.key = "0x48F495E9FD7D11E2";
+    signing.key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDn2PfoRVF81hGahkDlH0D6LyLzf4S8CbDHQku0aK+Eu";
     signing.signByDefault = true;
 
     userEmail = "f.hessling@shopware.com";
@@ -100,6 +101,13 @@ in
       push.default = "simple";
       fetch.prune = true;
       init.defaultBranch = "main";
+      gpg = {
+              format = "ssh";
+              ssh = {
+                      program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
+                      allowedSignersFile = "~/.ssh/allowed_signers";
+                  };
+          };
     };
 
     ignores = [
@@ -178,6 +186,7 @@ in
       max-cache-ttl 120
       pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac
     '';
+    ".ssh/allowed_signers".text = "f.hessling@shopware.com namespaces=\"git\" ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDn2PfoRVF81hGahkDlH0D6LyLzf4S8CbDHQku0aK+Eu";
     ".local/bin/dir_select".source = config.lib.file.mkOutOfStoreSymlink ./home/zsh/dir_select;
     ".local/bin/update-tf.sh".source = config.lib.file.mkOutOfStoreSymlink ./home/zsh/update-tf.sh;
     ".local/bin/update-tg.sh".source = config.lib.file.mkOutOfStoreSymlink ./home/zsh/update-tg.sh;

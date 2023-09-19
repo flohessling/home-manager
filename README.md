@@ -60,7 +60,11 @@ home-manager switch
 The secrets are en- / decrypted using GPG, which should be installed by now
 
 ```shell
+// with yubikey
 git-crypt unlock
+
+// with 1password
+op document get .gitcrypt --force | git-crypt unlock -
 ```
 
 ---
