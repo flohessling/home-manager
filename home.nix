@@ -38,11 +38,11 @@ in
     docker-compose
     docker-client
     unstable.colima
-    bitwarden-cli
     git-crypt
     direnv
     unstable.neovim
     natscli
+    kubectl
     nodejs
     nodePackages.pnpm
     php
