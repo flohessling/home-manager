@@ -189,6 +189,7 @@ in
 
     # secrets
     ".aws/config".source = config.lib.file.mkOutOfStoreSymlink ./secrets/aws/config;
+    ".aws/no-sso-config".source = config.lib.file.mkOutOfStoreSymlink ./secrets/no-sso-config;
     ".aws/credentials".source = config.lib.file.mkOutOfStoreSymlink ./secrets/aws/credentials;
     ".ssh/cloud".source = config.lib.file.mkOutOfStoreSymlink ./secrets/ssh/cloud;
     ".ssh/config".source = config.lib.file.mkOutOfStoreSymlink ./secrets/ssh/config;
