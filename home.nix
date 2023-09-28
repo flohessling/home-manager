@@ -164,12 +164,6 @@ in
       wgdown-prod = "sudo wg-quick down prod";
     };
     initExtra = ''
-      # yubikey setup
-      export GIT_SSH="/usr/bin/ssh"
-      export GPG_TTY="$(tty)"
-      export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-      gpgconf --launch gpg-agent
-
       # custom secret scripts
       ${builtins.readFile ./secrets/zsh/scripts.sh}
     '';
