@@ -76,7 +76,7 @@ in
       disable-ccid = true;
     };
     publicKeys = [{
-      source = ./home/gnupg/f.pub;
+      source = ./apps/gnupg/f.pub;
       trust = "ultimate";
     }];
   };
@@ -170,7 +170,7 @@ in
   };
 
   home.file = {
-    ".gnupg/pubkey.pub".source = config.lib.file.mkOutOfStoreSymlink ./home/gnupg/f.pub;
+    ".gnupg/pubkey.pub".source = config.lib.file.mkOutOfStoreSymlink ./apps/gnupg/f.pub;
     ".gnupg/gpg-agent.conf".text = ''
       # https://github.com/drduh/config/blob/master/gpg-agent.conf
       # https://www.gnupg.org/documentation/manuals/gnupg/Agent-Options.html
@@ -181,11 +181,11 @@ in
       pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac
     '';
     ".ssh/allowed_signers".text = "f.hessling@shopware.com namespaces=\"git\" ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDn2PfoRVF81hGahkDlH0D6LyLzf4S8CbDHQku0aK+Eu";
-    ".local/bin/dir_select".source = config.lib.file.mkOutOfStoreSymlink ./home/zsh/dir_select;
-    ".local/bin/update-tf.sh".source = config.lib.file.mkOutOfStoreSymlink ./home/zsh/update-tf.sh;
-    ".local/bin/update-tg.sh".source = config.lib.file.mkOutOfStoreSymlink ./home/zsh/update-tg.sh;
-    ".config/lvim/config.lua".source = config.lib.file.mkOutOfStoreSymlink ./home/lvim/config.lua;
-    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./home/nvim;
+    ".local/bin/dir_select".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/dir_select;
+    ".local/bin/update-tf.sh".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/update-tf.sh;
+    ".local/bin/update-tg.sh".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/update-tg.sh;
+    ".config/lvim/config.lua".source = config.lib.file.mkOutOfStoreSymlink ./apps/lvim/config.lua;
+    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./apps/nvim;
 
     # secrets
     ".aws/config".source = config.lib.file.mkOutOfStoreSymlink ./secrets/aws/config;
