@@ -1,10 +1,9 @@
-local M = {
+return {
     "lukas-reineke/indent-blankline.nvim",
-    event = "BufReadPre",
-    config = {
-        char = '┊',
-        show_trailing_blankline_indent = false,
+    event = { "BufReadPost", "BufNewFile" },
+    main = "ibl",
+    opts = {
+        indent = { char = "│" },
+        scope = { exclude = { language = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy" } } },
     },
 }
-
-return M
