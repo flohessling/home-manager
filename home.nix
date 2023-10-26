@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 let
   unstable = import <unstable> { config = { allowUnfree = true; }; };
-  php = pkgs.php81.buildEnv { extraConfig = "memory_limit = 2G"; };
+  php = pkgs.php82.buildEnv { extraConfig = "memory_limit = 2G"; };
 in
 {
   home.stateVersion = "23.05";
@@ -48,7 +48,7 @@ in
     php
     phpPackages.composer
     phpPackages.psalm
-    phpPackages.phpstan
+    # phpPackages.phpstan
     wireguard-tools
     wireguard-go
     yubikey-manager
