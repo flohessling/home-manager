@@ -158,6 +158,7 @@ in
       vim = "nvim";
       gpo = "git pull origin $(git_current_branch)";
       lg = "lazygit";
+      kill-md = "launchctl unload /Library/LaunchAgents/com.microsoft.wdav.tray.plist";
       wgup-staging = "sudo wg-quick up staging";
       wgup-prod = "sudo wg-quick up prod";
       wgdown-staging = "sudo wg-quick down staging";
