@@ -56,7 +56,6 @@ in
     postgresql
     mysql80
     nmap
-    siege
     unstable.shopware-cli
   ];
 
