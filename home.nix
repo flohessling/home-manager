@@ -37,7 +37,6 @@ in
     glab
     docker-compose
     docker-client
-    unstable.colima
     git-crypt
     direnv
     unstable.neovim

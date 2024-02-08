@@ -6,6 +6,8 @@ This repository contains my home-manager configuration to setup or restore my ma
 
 Since not all required packages are available via nixpkgs some are installed via brew beforehand.
 
+To run containers download and install orbstack from https://orbstack.dev 
+
 #### Install homebrew
 
 ```shell
@@ -17,12 +19,6 @@ Since not all required packages are available via nixpkgs some are installed via
 ```shell
 brew install --cask iterm2 vscodium obsidian postman font-jetbrains-mono-nerd-font
 brew install awscli awsume 1password-cli
-```
-
-#### Install lunarvim
-
-```shell
-bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 ```
 
 ### Install nix & home-manager
