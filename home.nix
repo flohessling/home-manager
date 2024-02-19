@@ -4,7 +4,7 @@ let
   php = pkgs.php82.buildEnv { extraConfig = "memory_limit = 2G"; };
 in
 {
-  home.stateVersion = "23.05";
+  home.stateVersion = "23.11";
   home.username = "f";
   home.homeDirectory = "/Users/f";
   home.sessionVariables = { EDITOR = "nvim"; };
