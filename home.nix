@@ -161,6 +161,7 @@ in
       wgup-prod = "sudo wg-quick up prod";
       wgdown-staging = "sudo wg-quick down staging";
       wgdown-prod = "sudo wg-quick down prod";
+      tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale";
     };
     initExtra = ''
       # custom secret scripts
