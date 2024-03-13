@@ -31,7 +31,6 @@ in
     tree
     ffmpeg
     lazygit
-    # unstable.awscli2
     unstable.ssm-session-manager-plugin
     temporal-cli
     glab
@@ -47,7 +46,6 @@ in
     php
     phpPackages.composer
     phpPackages.psalm
-    # phpPackages.phpstan
     wireguard-tools
     wireguard-go
     yubikey-manager
