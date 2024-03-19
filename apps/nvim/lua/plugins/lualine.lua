@@ -4,7 +4,7 @@ local M = {
     config = {
         options = {
             icons_enabled = false,
-            theme = 'nordic',
+            theme = 'vscode',
             component_separators = '|',
             section_separators = '',
         },

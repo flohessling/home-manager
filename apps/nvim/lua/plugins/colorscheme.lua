@@ -1,15 +1,12 @@
 return {
     {
         "AlexvZyl/nordic.nvim",
-        enabled = true,
+        enabled = false,
         lazy = false,
         priority = 999,
         config = function()
             require("nordic").setup({
                 transparent_bg = true,
-                telescope = {
-                    style = 'classic',
-                }
             })
             vim.cmd("colorscheme nordic")
         end,
@@ -37,7 +34,7 @@ return {
     },
     {
         "Mofiqul/vscode.nvim",
-        enabled = false,
+        enabled = true,
         lazy = false,
         priority = 999,
         config = function()
