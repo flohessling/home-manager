@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
     defaults = { lazy = true },
-    install = { colorscheme = { "vscode" } },
+    install = { colorscheme = { "nordic", "kanagawa", "vscode" } },
     performance = {
         cache = {
             enabled = true,

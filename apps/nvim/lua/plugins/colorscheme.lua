@@ -1,7 +1,43 @@
 return {
     {
-        "Mofiqul/vscode.nvim",
+        "AlexvZyl/nordic.nvim",
         enabled = true,
+        lazy = false,
+        priority = 999,
+        config = function()
+            require("nordic").setup({
+                transparent_bg = true,
+                telescope = {
+                    style = 'classic',
+                }
+            })
+            vim.cmd("colorscheme nordic")
+        end,
+    },
+    {
+        "rebelot/kanagawa.nvim",
+        enabled = false,
+        lazy = false,
+        priority = 999,
+        config = function()
+            require("kanagawa").setup({
+                transparent = true,
+                colors = {
+                    theme = {
+                        all = {
+                            ui = {
+                                bg_gutter = "none"
+                            }
+                        }
+                    }
+                }
+            })
+            vim.cmd("colorscheme kanagawa-dragon")
+        end,
+    },
+    {
+        "Mofiqul/vscode.nvim",
+        enabled = false,
         lazy = false,
         priority = 999,
         config = function()
@@ -11,36 +47,7 @@ return {
                 italic_comments = true, -- enable italic comments
                 disable_nvimtree_bg = true, -- disable nvim-tree background color
             })
-            vim.cmd.colorscheme("vscode")
+            vim.cmd("colorscheme vscode")
         end,
-    },
-    {
-        "catppuccin/nvim",
-        enabled = false,
-        lazy = false,
-        priority = 999,
-        config = function ()
-            require("catppuccin").setup({
-                flavour = "mocha",
-                background = {
-                    dark = "mocha",
-                },
-                term_colors = true,
-                color_overrides = {
-                    mocha = {
-                        base = "#14171a",
-                        mantle = "#14171a",
-                        crust = "#14171a",
-                    }
-                },
-                integrations = {
-                    cmp = true,
-                    gitsigns = true,
-                    nvimtree = true,
-                    telescope = true,
-                },
-            })
-            vim.cmd.colorscheme("catppuccin-mocha")
-        end
     },
 }
