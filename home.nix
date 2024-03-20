@@ -133,8 +133,9 @@ in
     enableCompletion = false;
     oh-my-zsh = {
       enable = true;
-      theme = "minimal";
+      theme = "oxide";
       plugins = ["git" "docker" "docker-compose" "aws"];
+      custom = "$HOME/.oh-my-zsh/themes";
     };
     localVariables = {
       EDITOR = "nvim";
@@ -146,8 +147,8 @@ in
       MANPAGER = "nvim +Man!";
     };
     shellAliases = {
-      cat = "bat -pp --theme \"Visual Studio Dark+\"";
-      bcat = "bat --theme \"Visual Studio Dark+\"";
+      cat = "bat -pp --theme \"base16\"";
+      bcat = "bat --theme \"base16\"";
       ykrestart = "gpgconf --reload scdaemon && gpgconf --kill gpg-agent && gpg-connect-agent updatestartuptty /bye";
       awsume = ". awsume";
       vi = "nvim";
@@ -184,6 +185,7 @@ in
     ".local/bin/update-tg.sh".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/update-tg.sh;
     ".config/lvim/config.lua".source = config.lib.file.mkOutOfStoreSymlink ./apps/lvim/config.lua;
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./apps/nvim;
+    ".oh-my-zsh/themes/oxide.zsh-theme".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/theme/oxide.zsh-theme;
 
     # secrets
     ".aws/config".source = config.lib.file.mkOutOfStoreSymlink ./secrets/aws/config;
