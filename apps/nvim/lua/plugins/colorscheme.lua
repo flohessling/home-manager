@@ -1,7 +1,16 @@
 return {
     {
-        "rebelot/kanagawa.nvim",
+        "mellow-theme/mellow.nvim",
         enabled = true,
+        lazy = false,
+        priority = 999,
+        config = function()
+            vim.cmd("colorscheme mellow")
+        end,
+    },
+    {
+        "rebelot/kanagawa.nvim",
+        enabled = false,
         lazy = false,
         priority = 999,
         config = function()
