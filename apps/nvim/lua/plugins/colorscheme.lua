@@ -1,30 +1,13 @@
 return {
     {
-        "mellow-theme/mellow.nvim",
-        enabled = true,
-        lazy = false,
-        priority = 999,
-        config = function()
-            vim.cmd("colorscheme mellow")
-        end,
-    },
-    {
         "rebelot/kanagawa.nvim",
-        enabled = false,
+        enabled = true,
         lazy = false,
         priority = 999,
         config = function()
             require("kanagawa").setup({
                 transparent = true,
-                colors = {
-                    theme = {
-                        all = {
-                            ui = {
-                                bg_gutter = "none"
-                            }
-                        }
-                    }
-                }
+                colors = { theme = { all = { ui = { bg_gutter = "none" }}}}
             })
             vim.cmd("colorscheme kanagawa-dragon")
         end,

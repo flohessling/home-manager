@@ -133,7 +133,7 @@ in
     enableCompletion = false;
     oh-my-zsh = {
       enable = true;
-      theme = "robbyrussell";
+      theme = "lambda";
       plugins = ["git" "docker" "docker-compose" "aws"];
     };
     localVariables = {
