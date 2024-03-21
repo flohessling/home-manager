@@ -2,7 +2,7 @@ local Util = require("util")
 
 return {
 	"nvim-telescope/telescope.nvim",
-	enable = false,
+	enable = true,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
