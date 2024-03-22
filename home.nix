@@ -155,10 +155,11 @@ in
       MANPAGER = "nvim +Man!";
     };
     shellAliases = {
+      hm = "home-manager";
+      sso = "aws sso login --sso-session root";
       cat = "bat -pp --theme \"base16\"";
       bcat = "bat --theme \"base16\"";
-      ykrestart = "gpgconf --reload scdaemon && gpgconf --kill gpg-agent && gpg-connect-agent updatestartuptty /bye";
-      awsume = ". awsume";
+      # ykrestart = "gpgconf --reload scdaemon && gpgconf --kill gpg-agent && gpg-connect-agent updatestartuptty /bye";
       vi = "nvim";
       vim = "nvim";
       gpo = "git pull origin $(git_current_branch)";
