@@ -12,7 +12,6 @@ return {
 	end,
 
 	config = function()
-		require("mini.move").setup()
 		require("mini.bracketed").setup()
 		require("mini.surround").setup()
 		require("mini.trailspace").setup()
@@ -20,6 +19,8 @@ return {
 		require("mini.cursorword").setup()
 		require("mini.misc").setup({ make_global = { "setup_auto_root" } })
 		require("mini.misc").setup_auto_root()
+
+		require("mini.move").setup({})
 
 		require("mini.indentscope").setup({
 			-- symbol = "▏",
