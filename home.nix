@@ -99,6 +99,7 @@ in
     aliases = {
       rs = "restore --staged";
       amend = "commit --amend --reuse-message=HEAD";
+      pf = "push --force-with-lease";
     };
 
     extraConfig = {
