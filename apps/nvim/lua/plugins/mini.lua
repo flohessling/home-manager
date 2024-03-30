@@ -21,6 +21,8 @@ return {
 		require("mini.misc").setup_auto_root()
 
 		require("mini.move").setup({})
+		-- to use meta keys with iterm change the setting in iterm for option key to +Esc
+		-- profiles > keys > general > option key acts as +Esc
 
 		require("mini.indentscope").setup({
 			-- symbol = "▏",
