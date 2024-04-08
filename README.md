@@ -1,4 +1,4 @@
-# my nix home-manager repository
+# My Nix home-manager Repository
 
 This repository contains my home-manager configuration to setup or restore my mac environment.
 
