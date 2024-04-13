@@ -157,10 +157,12 @@ in
     };
     shellAliases = {
       hm = "home-manager";
+      ehm = "v ~/.config/home-manager/home.nix";
       sso = "aws sso login --sso-session root";
       cat = "bat -pp --theme \"base16\"";
       bcat = "bat --theme \"base16\"";
       # ykrestart = "gpgconf --reload scdaemon && gpgconf --kill gpg-agent && gpg-connect-agent updatestartuptty /bye";
+      v = "nvim";
       vi = "nvim";
       vim = "nvim";
       gpo = "git pull origin $(git_current_branch)";
