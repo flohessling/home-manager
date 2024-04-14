@@ -3,7 +3,7 @@
 today=$(date +"%Y-%m-%d")
 tomorrow=$(gdate -d "tomorrow" '+%Y-%m-%d')
 yesterday=$(gdate -d "yesterday" '+%Y-%m-%d')
-file="$HOME"'/notes/02-daily/'"$today".md
+file="$HOME"'/notes/01-daily/'"$today".md
 
 cd "$HOME"/notes || exit
 
