@@ -24,6 +24,7 @@ open_file() {
     echo -en "\n"
     echo -en "\n"
     echo -en "\n"
+    echo "---"
     echo "links:"
     echo -en "\n"
     echo "$timestamp"

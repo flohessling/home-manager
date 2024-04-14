@@ -161,6 +161,7 @@ in
       cdhm = "cd ~/.config/home-manager";
       ehm = "v ~/.config/home-manager/home.nix";
       cdnotes = "cd ~/notes";
+      todo = "v ~/notes/home.md";
       sso = "aws sso login --sso-session root";
       cat = "bat -pp --theme \"base16\"";
       bcat = "bat --theme \"base16\"";
