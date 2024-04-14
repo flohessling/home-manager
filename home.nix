@@ -195,6 +195,7 @@ in
     '';
     ".ssh/allowed_signers".text = "f.hessling@shopware.com namespaces=\"git\" ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDn2PfoRVF81hGahkDlH0D6LyLzf4S8CbDHQku0aK+Eu";
     ".local/bin/day".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/day;
+    ".local/bin/note".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/note;
     ".local/bin/dir_select".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/dir_select;
     ".local/bin/update-tf.sh".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/update-tf.sh;
     ".local/bin/update-tg.sh".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/update-tg.sh;

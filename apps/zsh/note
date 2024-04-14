@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+# bash script to take a note and place it into notes/0-inbox folder
+
+# function to query for a filename if none is provided
+get_filename() {
+  read -p "enter a filename: " filename
+  echo "$filename"
+}
+
+# function to create and open the file in the specified folder
+open_file() {
+  # change to the directory
+  cd "$1" || exit
+  # create the specified file
+  touch "$1/$filename.md"
+
+  # create timestamp as unique identifier
+  timestamp="$(date +"%Y%m%d%H%M")"
+
+  # format the file
+  {
+    echo "# "
+    echo -en "\n"
+    echo -en "\n"
+    echo -en "\n"
+    echo "links:"
+    echo -en "\n"
+    echo "$timestamp"
+  } >>"$1/$filename.md"
+
+  # open the file in neovim
+  nvim "$1/$filename.md"
+}
+
+# prompt for filename if no parameter is provided
+if [[ $# -eq 0 ]]; then
+  filename=$(get_filename)
+fi
+
+# if more than one parameter is provided print error and exit
+if [[ $# -gt 1 ]]; then
+  echo "please provide only one filename separated by dashes, without .md extension..."
+  echo "example: note my-new-note"
+  exit 1
+fi
+
+# set filename from parameter
+if [[ $# -eq 1 ]]; then
+  filename=$1
+fi
+
+open_file "$HOME/notes/0-inbox"
