@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+today=$(date +"%Y-%m-%d")
+tomorrow=$(gdate -d "tomorrow" '+%Y-%m-%d')
+yesterday=$(gdate -d "yesterday" '+%Y-%m-%d')
+file="$HOME"'/notes/02-daily/'"$today".md
+
+cd "$HOME"/notes || exit
+
+new_note() {
+  touch "$file"
+
+  # format with daily template
+  cat <<EOF >"$file"
+# $today
+
+[[$yesterday]] - [[$tomorrow]]
+
+## daily habits
+
+- [ ] excercise for at least 10 minutes
+- [ ] write at least one line of code
+
+## eod
+
+*What did I achieve today?*
+- 
+
+*What do I want to achieve tomorrow?*
+-
+
+## log
+EOF
+
+}
+
+# if the daily note does not exist create a new one
+if [ ! -f "$file" ]; then
+  echo "creating a new daily note..."
+  new_note
+fi
+
+# open the daily note in nvim
+nvim "$file"
