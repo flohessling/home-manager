@@ -21,6 +21,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- Clear search with <esc>
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>")
+vim.keymap.set({ "i", "n" }, "<C-c>", "<cmd>noh<cr><C-c>")
 
 -- Add undo break-points
 vim.keymap.set("i", ",", ",<c-g>u")
