@@ -179,8 +179,9 @@ in
       tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale";
     };
     initExtra = ''
-      # custom secret scripts
+      # custom scripts
       ${builtins.readFile ./secrets/zsh/scripts.sh}
+      ${builtins.readFile ./apps/zsh/scripts.sh}
     '';
   };
 
