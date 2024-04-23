@@ -160,8 +160,7 @@ in
       hm = "home-manager";
       cdhm = "cd ~/.config/home-manager";
       ehm = "v ~/.config/home-manager/home.nix";
-      cdnotes = "cd ~/notes";
-      todo = "v ~/notes/home.md";
+      notes = "cd ~/notes && v home.md";
       sso = "aws sso login --sso-session root";
       cat = "bat -pp --theme \"base16\"";
       bcat = "bat --theme \"base16\"";
@@ -200,12 +199,14 @@ in
     ".local/bin/day".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/day;
     ".local/bin/note".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/note;
     ".local/bin/dir_select".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/dir_select;
+    ".local/bin/tmux-sessionizer".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/tmux-sessionizer;
     ".local/bin/update-tf.sh".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/update-tf.sh;
     ".local/bin/update-tg.sh".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/update-tg.sh;
     ".config/lvim/config.lua".source = config.lib.file.mkOutOfStoreSymlink ./apps/lvim/config.lua;
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./apps/nvim;
     ".config/lazygit/config.yml".source = config.lib.file.mkOutOfStoreSymlink ./apps/lazygit/config.yml;
     ".oh-my-zsh/themes/oxide.zsh-theme".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/theme/oxide.zsh-theme;
+    ".tmux.conf".source = config.lib.file.mkOutOfStoreSymlink ./apps/tmux/tmux.conf;
 
     # secrets
     ".aws/config".source = config.lib.file.mkOutOfStoreSymlink ./secrets/aws/config;
