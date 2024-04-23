@@ -203,6 +203,7 @@ in
     ".local/bin/update-tg.sh".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/update-tg.sh;
     ".config/lvim/config.lua".source = config.lib.file.mkOutOfStoreSymlink ./apps/lvim/config.lua;
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./apps/nvim;
+    ".config/lazygit/config.yml".source = config.lib.file.mkOutOfStoreSymlink ./apps/lazygit/config.yml;
     ".oh-my-zsh/themes/oxide.zsh-theme".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/theme/oxide.zsh-theme;
 
     # secrets
