@@ -181,6 +181,7 @@ in
       cat = "bat -pp --theme \"base16\"";
       bcat = "bat --theme \"base16\"";
       # ykrestart = "gpgconf --reload scdaemon && gpgconf --kill gpg-agent && gpg-connect-agent updatestartuptty /bye";
+      t = "tmux new -As0";
       v = "nvim";
       vi = "nvim";
       vim = "nvim";
