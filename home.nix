@@ -27,6 +27,7 @@ in
   ];
 
   home.packages = with pkgs; [
+    # unstable.neovim
     zsh
     oh-my-zsh
     htop
@@ -48,15 +49,16 @@ in
     unstable.ssm-session-manager-plugin
     temporal-cli
     glab
+    act
     docker-compose
     docker-client
     git-crypt
     direnv
-    # unstable.neovim
     neovim-nightly
     natscli
     kubectl
     k9s
+    cargo
     nodejs
     nodePackages.pnpm
     php
