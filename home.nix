@@ -1,17 +1,23 @@
 { config, pkgs, lib, ... }:
 let
   unstable = import <unstable> { config = { allowUnfree = true; }; };
-  php = pkgs.php82.buildEnv { extraConfig = "memory_limit = 2G"; };
+  php = pkgs.php83.buildEnv { 
+      extraConfig = "memory_limit = 2G";
+      extensions = ({ enabled, all }: enabled++ (with all; [ redis grpc ]));
+  };
+  phpPackages = pkgs.php83.packages;
 in
 {
-  home.stateVersion = "23.11";
   home.username = "f";
   home.homeDirectory = "/Users/f";
+  home.stateVersion = "23.11";
   home.sessionVariables = { EDITOR = "nvim"; };
 
   programs.home-manager.enable = true;
 
   nixpkgs.config.allowUnfree = true;
+
+  xdg.enable = true;
 
   # neovim nightly
   nixpkgs.overlays = [
@@ -38,6 +44,7 @@ in
     tree
     ffmpeg
     lazygit
+    coreutils-prefixed
     unstable.ssm-session-manager-plugin
     temporal-cli
     glab
@@ -49,10 +56,13 @@ in
     neovim-nightly
     natscli
     kubectl
+    k9s
     nodejs
     nodePackages.pnpm
     php
     phpPackages.composer
+    phpPackages.php-cs-fixer
+    phpPackages.phpstan
     phpPackages.psalm
     wireguard-tools
     wireguard-go
@@ -62,7 +72,6 @@ in
     mysql80
     nmap
     unstable.shopware-cli
-    coreutils-prefixed
   ];
 
   programs.direnv.enable = true;
@@ -144,12 +153,17 @@ in
     oh-my-zsh = {
       enable = true;
       theme = "oxide";
-      plugins = ["git" "docker" "docker-compose" "aws"];
+      plugins = ["git" "docker" "docker-compose" "aws" "fzf"];
       custom = "$HOME/.oh-my-zsh/themes";
     };
     localVariables = {
       EDITOR = "nvim";
-      PATH = "$PATH:$GOPATH/bin:$HOME/.local/bin";
+      PATH = builtins.concatStringsSep ":" [
+        "$PATH"
+        "$GOPATH/bin"
+        "$HOME/.local/bin"
+        "${pkgs.nodejs}/bin"
+      ];
     };
     sessionVariables = {
       DOCKER_BUILDKIT = 1;
