@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cdp() {
-  cd $(~/.local/bin/dir_select)
+  cd "$(~/.local/bin/dir_select)"
 }
 
 declare awsprofiles
@@ -19,7 +19,7 @@ cognito() {
   if [ -z "$poolID" ]; then
     exit 1
   fi
-  echo $poolID
+  echo "$poolID"
 
   usernames=$(aws cognito-idp list-users --user-pool-id "$poolID" --query "Users[].Username" --output json | jq -r '.[]')
   printf '%-14s ' "Username:"
@@ -27,7 +27,7 @@ cognito() {
   if [ -z "$username" ]; then
     return
   fi
-  echo $username
+  echo "$username"
 
   availableGroups=$(aws cognito-idp list-groups --user-pool-id "$poolID" --output json --query "Groups[].GroupName" | jq -r '.[]')
   currentGroups=$(aws cognito-idp admin-list-groups-for-user --user-pool-id "$poolID" --username "$username" --output json --query "Groups[].GroupName" | jq -r '.[]')
@@ -85,43 +85,43 @@ ecsconnect() {
     echo "no cluster found"
     return
   fi
-  echo $cluster
+  echo "$cluster"
 
   printf '%-12s ' "service:"
-  service=$(aws ecs list-services --cluster $cluster --query 'serviceArns' | jq -r '.[]' | cut -d '/' -f3 | fzf -1 -q "$2")
+  service=$(aws ecs list-services --cluster "$cluster" --query 'serviceArns' | jq -r '.[]' | cut -d '/' -f3 | fzf -1 -q "$2")
   if [ -z "$service" ]; then
     echo "no service found"
     return
   fi
-  echo $service
+  echo "$service"
 
   printf '%-12s ' "container:"
-  taskDef=$(aws ecs describe-services --services $service --cluster $cluster | jq -r '.services[].taskDefinition')
+  taskDef=$(aws ecs describe-services --services "$service" --cluster "$cluster" | jq -r '.services[].taskDefinition')
   if [ -z "$taskDef" ]; then
     echo "no task definition found"
     return
   fi
 
-  container=$(aws ecs describe-task-definition --task-definition $taskDef | jq -r '.taskDefinition.containerDefinitions[] | select(.linuxParameters.initProcessEnabled == true) | .name' | fzf -1 -q "$3")
+  container=$(aws ecs describe-task-definition --task-definition "$taskDef" | jq -r '.taskDefinition.containerDefinitions[] | select(.linuxParameters.initProcessEnabled == true) | .name' | fzf -1 -q "$3")
   if [ -z "$container" ]; then
     echo "no container with SSM enabled found"
     return
   fi
-  echo $container
+  echo "$container"
 
   printf '%-12s ' "task:"
-  taskID=$(aws ecs list-tasks --cluster $cluster --service $service --query 'taskArns' | jq -r '.[]' | cut -d'/' -f3 | fzf -1 -q "$4")
+  taskID=$(aws ecs list-tasks --cluster "$cluster" --service "$service" --query 'taskArns' | jq -r '.[]' | cut -d'/' -f3 | fzf -1 -q "$4")
   if [ -z "$taskID" ]; then
     echo "no task found"
     return
   fi
-  echo $taskID
+  echo "$taskID"
 
   echo "---"
 
   echo "connecting to $cluster/$service/$taskID/$container"
 
-  aws ecs execute-command --interactive --command /bin/sh --task $taskID --cluster $cluster --container $container
+  aws ecs execute-command --interactive --command /bin/sh --task "$taskID" --cluster "$cluster" --container "$container"
 }
 
 ecr() {
