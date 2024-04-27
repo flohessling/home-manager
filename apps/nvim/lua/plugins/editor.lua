@@ -71,4 +71,10 @@ return {
 		config = true,
 		event = "BufReadPost",
 	},
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		event = "VeryLazy",
+		config = true,
+	},
 }
