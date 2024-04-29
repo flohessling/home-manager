@@ -21,7 +21,6 @@ vim.opt.clipboard = "unnamedplus" -- Use system clipboard
 vim.opt.tabstop = 4 -- Insert 4 spaces for a tab
 vim.opt.shiftwidth = 4 -- Change the number of space characters inserted for indentation
 vim.opt.expandtab = true -- Converts tabs to spaces
-vim.opt.smartindent = true
 vim.opt.splitbelow = true -- force all horizontal splits to go below current window
 vim.opt.splitright = true -- force all vertical splits to go to the right of current window
 vim.opt.scrolloff = 8 -- minimal number of screen lines to keep above and below the cursor.
@@ -38,7 +37,5 @@ vim.opt.grepprg = "rg --vimgrep"
 vim.opt.grepformat = "%f:%l:%c:%m"
 vim.opt.list = true
 
-if vim.fn.has("nvim-0.9.0") == 1 then
-	vim.opt.splitkeep = "screen"
-	vim.o.shortmess = "filnxtToOFWIcC"
-end
+vim.opt.splitkeep = "cursor" -- keep cursor position when opening a new split
+vim.o.shortmess = "filnxtToOFWIcC"
