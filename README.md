@@ -1,4 +1,4 @@
-# My Nix home-manager Repository
+# My Nix Home Manager Repository (dotfiles)
 
 This repository contains my home-manager configuration to setup or restore my mac environment.
 

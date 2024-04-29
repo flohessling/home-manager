@@ -78,6 +78,7 @@ return {
 					end
 				end
 				require("lspconfig")[server].setup(server_opts)
+				require("lspconfig.ui.windows").default_options.border = "rounded"
 			end
 
 			local all_mslp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package)
@@ -93,6 +94,7 @@ return {
 				end
 			end
 
+			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 			require("mason-lspconfig").setup({ ensure_installed = ensure_installed, handlers = { setup } })
 		end,
 	},

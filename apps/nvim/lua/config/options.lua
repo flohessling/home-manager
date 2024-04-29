@@ -39,3 +39,5 @@ vim.opt.list = true
 
 vim.opt.splitkeep = "cursor" -- keep cursor position when opening a new split
 vim.o.shortmess = "filnxtToOFWIcC"
+
+vim.diagnostic.config({ float = { border = "rounded" } }) -- Use rounded borders for diagnostics
