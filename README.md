@@ -25,7 +25,7 @@ brew install awscli awsume 1password-cli
 
 ```shell
 # install nix
-sh <(curl -L https://nixos.org/nix/install)
+bash <(curl -L https://nixos.org/nix/install) --daemon
 
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
@@ -66,12 +66,22 @@ op document get .gitcrypt --force | git-crypt unlock -
 ---
 ### Upgrading nix 
 
-Upgrading nix on macOS requires the restart of the daemon
+First check which Nix version will be installed (using unstable channel):
 
 ```shell
-sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'
-
+nix-shell -p nix -I nixpkgs=channel:nixpkgs-unstable --run "nix --version"
 ```
+
+Then upgrade Nix and restart the daemon:
+
+```shell
+sudo nix-env --install --file '<nixpkgs>' --attr nix -I nixpkgs=channel:nixpkgs-unstable
+sudo launchctl remove org.nixos.nix-daemon
+sudo launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist
+```
+
+After the last update it was necessart to execute `nix-env --install --attr nix` without sudo to really switch to the new version.
+
 ### Troubleshooting nix
 
 After upgrading macOS `/etc/zshrc` is reset and loses the Nix specific lines that have to be added again to get `nix` running again.
