@@ -14,7 +14,7 @@ awsp() {
 }
 
 cognito() {
-  printf '%-14s ' "User Pool ID:"
+  printf '%-14s ' "user pool id:"
   poolID=$(aws cognito-idp list-user-pools --max-results 50 --output text --query 'UserPools[].Id' | fzf -1)
   if [ -z "$poolID" ]; then
     exit 1
@@ -22,7 +22,7 @@ cognito() {
   echo "$poolID"
 
   usernames=$(aws cognito-idp list-users --user-pool-id "$poolID" --query "Users[].Username" --output json | jq -r '.[]')
-  printf '%-14s ' "Username:"
+  printf '%-14s ' "username:"
   username=$(echo "$usernames" | fzf -1 -q "$1")
   if [ -z "$username" ]; then
     return
@@ -35,7 +35,7 @@ cognito() {
   if [ -z "$groups" ]; then
     return
   fi
-  printf '%-14s ' "Groups:"
+  printf '%-14s ' "groups:"
 
   echo
 
@@ -43,7 +43,7 @@ cognito() {
 
   echo
 
-  read -r -p "Continue? [y/N] " -n 1
+  read -r -p "continue? [y/N] " -n 1
   echo
   if [[ ! "$REPLY" =~ ^[Yy]$ ]]; then
     return
@@ -51,14 +51,14 @@ cognito() {
 
   for g in $groups; do
     if [[ ! " ${currentGroups[*]} " =~ $g ]]; then
-      echo "* Adding to $g"
+      echo "* adding to $g"
       aws cognito-idp admin-add-user-to-group --user-pool-id "$poolID" --username "$username" --group-name "$g"
     fi
   done
 
   for g in $currentGroups; do
     if [[ ! " ${groups[*]} " =~ $g ]]; then
-      echo "* Removing from $g"
+      echo "* removing from $g"
       aws cognito-idp admin-remove-user-from-group --user-pool-id "$poolID" --username "$username" --group-name "$g"
     fi
   done
