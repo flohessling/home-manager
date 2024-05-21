@@ -25,8 +25,6 @@ return {
 		-- profiles > keys > general > option key acts as +Esc
 
 		require("mini.indentscope").setup({
-			-- symbol = "▏",
-			-- symbol = "│",
 			symbol = "╎",
 			options = { try_as_border = true },
 			draw = {

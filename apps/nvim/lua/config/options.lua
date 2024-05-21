@@ -36,6 +36,7 @@ vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.grepprg = "rg --vimgrep"
 vim.opt.grepformat = "%f:%l:%c:%m"
 vim.opt.list = true
+vim.opt.listchars = { tab = "  " }
 
 vim.opt.splitkeep = "cursor" -- keep cursor position when opening a new split
 vim.o.shortmess = "filnxtToOFWIcC"

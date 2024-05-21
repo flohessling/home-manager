@@ -9,18 +9,6 @@ return {
 		end,
 	},
 	{
-		"lukas-reineke/indent-blankline.nvim",
-		event = { "BufReadPost", "BufNewFile" },
-		main = "ibl",
-		opts = {
-			indent = { char = "╎", tab_char = "╎" },
-			scope = { enabled = false },
-		},
-		exclude = {
-			language = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy" },
-		},
-	},
-	{
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		event = "VeryLazy",
