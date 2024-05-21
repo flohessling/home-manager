@@ -13,6 +13,7 @@ return {
 		opts = function(_, opts)
 			vim.list_extend(opts.ensure_installed, {
 				"terraform-ls",
+				"hclfmt",
 			})
 		end,
 	},
@@ -30,7 +31,7 @@ return {
 			opts.formatters_by_ft = vim.tbl_deep_extend("force", opts.formatters_by_ft, {
 				terraform = { "terraform_fmt" },
 				tf = { "terraform_fmt" },
-				hcl = { "terragrunt_hclfmt" },
+				hcl = { "hcl" },
 				["terraform-vars"] = { "terraform_fmt" },
 			})
 		end,
