@@ -90,6 +90,13 @@ return {
                 end, { buffer = buf_id, desc = "grep in directory" })
             end,
         })
+        vim.api.nvim_create_autocmd("user", {
+            pattern = "MiniFilesWindowOpen",
+            callback = function(args)
+                local win_id = args.data.win_id
+                vim.api.nvim_win_set_config(win_id, { border = "rounded" })
+            end,
+        })
 	end,
     -- stylua: ignore
     keys = {
