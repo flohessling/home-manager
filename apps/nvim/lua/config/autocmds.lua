@@ -40,7 +40,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
         "startuptime",
         "tsplayground",
         "PlenaryTestPopup",
-        "NvimTree",
         "neotest-output",
         "neotest-summary",
         "neotest-output-panel",

@@ -17,6 +17,9 @@ return {
 		require("mini.trailspace").setup()
 		require("mini.bufremove").setup()
 		require("mini.cursorword").setup()
+        require("mini.statusline").setup()
+        require("mini.notify").setup()
+        require("mini.splitjoin").setup()
 		require("mini.misc").setup({ make_global = { "setup_auto_root" } })
 		require("mini.misc").setup_auto_root()
 
@@ -45,9 +48,55 @@ return {
 				comment_visual = "<leader>/",
 			},
 		})
+
+        require("mini.files").setup({
+            mappings = {
+                go_in_plus = "<Right>",
+                go_out_plus = "<Left>",
+            },
+        })
+
+        local MiniFiles = require("mini.files")
+        local map_split = function(buf_id, lhs, direction)
+            local rhs = function()
+                -- create new window and set it as target 
+                local new_target_window
+                vim.api.nvim_win_call(MiniFiles.get_target_window(), function()
+                    vim.cmd(direction .. " split")
+                    new_target_window = vim.api.nvim_get_current_win()
+                end)
+
+                MiniFiles.set_target_window(new_target_window)
+            end
+
+            vim.keymap.set("n", lhs, rhs, { buffer = buf_id, desc = "split " .. direction })
+        end
+
+        vim.api.nvim_create_autocmd("user", {
+            pattern = "MiniFilesBufferCreate",
+            callback = function(args)
+                local buf_id = args.data.buf_id
+
+                -- open in split
+                map_split(buf_id, "gs", "belowright horizontal")
+                map_split(buf_id, "gv", "belowright vertical")
+
+                -- grep in folder
+                vim.keymap.set("n", "gg", function()
+                    local cur_entry_path = MiniFiles.get_fs_entry().path
+                    local basedir = vim.fs.dirname(cur_entry_path)
+                    MiniFiles.close()
+                    require("telescope.builtin").find_files({ cwd = basedir })
+                end, { buffer = buf_id, desc = "grep in directory" })
+            end,
+        })
 	end,
     -- stylua: ignore
     keys = {
         { "<leader>X", function() require("mini.bufremove").delete(0, false) end, desc = "Delete Buffer", },
+        { "<leader>e", function()
+            local MiniFiles = require("mini.files")
+            if not MiniFiles.close() then MiniFiles.open(vim.api.nvim_buf_get_name(0)) end
+        end, desc = "open in file explorer" }
     },
 }

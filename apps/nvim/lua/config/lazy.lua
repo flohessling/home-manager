@@ -18,6 +18,9 @@ require("lazy").setup({
 	},
 	defaults = { lazy = true },
 	install = { colorscheme = { "no-clown-fiesta" } },
+    change_detection = {
+        notify = false,
+    },
 	ui = {
 		border = "rounded",
 	},
