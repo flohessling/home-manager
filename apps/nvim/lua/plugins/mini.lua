@@ -1,53 +1,53 @@
 return {
-	"echasnovski/mini.nvim",
-	version = false,
-	lazy = false,
-	init = function()
-		vim.api.nvim_create_autocmd("FileType", {
-			pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
-			callback = function()
-				vim.b.miniindentscope_disable = true
-			end,
-		})
-	end,
+    "echasnovski/mini.nvim",
+    version = false,
+    lazy = false,
+    init = function()
+        vim.api.nvim_create_autocmd("FileType", {
+            pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+            callback = function()
+                vim.b.miniindentscope_disable = true
+            end,
+        })
+    end,
 
-	config = function()
-		require("mini.bracketed").setup()
-		require("mini.surround").setup()
-		require("mini.trailspace").setup()
-		require("mini.bufremove").setup()
-		require("mini.cursorword").setup()
+    config = function()
+        require("mini.bracketed").setup()
+        require("mini.surround").setup()
+        require("mini.trailspace").setup()
+        require("mini.bufremove").setup()
+        require("mini.cursorword").setup()
         require("mini.statusline").setup()
         require("mini.notify").setup()
         require("mini.splitjoin").setup()
-		require("mini.misc").setup({ make_global = { "setup_auto_root" } })
-		require("mini.misc").setup_auto_root()
+        require("mini.misc").setup({ make_global = { "setup_auto_root" } })
+        require("mini.misc").setup_auto_root()
 
-		require("mini.move").setup({})
-		-- to use meta keys with iterm change the setting in iterm for option key to +Esc
-		-- profiles > keys > general > option key acts as +Esc
+        require("mini.move").setup({})
+        -- to use meta keys with iterm change the setting in iterm for option key to +Esc
+        -- profiles > keys > general > option key acts as +Esc
 
-		require("mini.indentscope").setup({
-			-- symbol = "╎",
-			symbol = "│",
-			options = { try_as_border = true },
-			draw = {
-				animation = require("mini.indentscope").gen_animation.linear(),
-			},
-		})
+        require("mini.indentscope").setup({
+            -- symbol = "╎",
+            symbol = "│",
+            options = { try_as_border = true },
+            draw = {
+                animation = require("mini.indentscope").gen_animation.linear(),
+            },
+        })
 
-		require("mini.comment").setup({
-			options = {
-				custom_commentstring = function()
-					return require("ts_context_commentstring.internal").calculate_commentstring()
-						or vim.bo.commentstring
-				end,
-			},
-			mappings = {
-				comment_line = "<leader>/",
-				comment_visual = "<leader>/",
-			},
-		})
+        require("mini.comment").setup({
+            options = {
+                custom_commentstring = function()
+                    return require("ts_context_commentstring.internal").calculate_commentstring()
+                        or vim.bo.commentstring
+                end,
+            },
+            mappings = {
+                comment_line = "<leader>/",
+                comment_visual = "<leader>/",
+            },
+        })
 
         require("mini.files").setup({
             mappings = {
@@ -59,7 +59,7 @@ return {
         local MiniFiles = require("mini.files")
         local map_split = function(buf_id, lhs, direction)
             local rhs = function()
-                -- create new window and set it as target 
+                -- create new window and set it as target
                 local new_target_window
                 vim.api.nvim_win_call(MiniFiles.get_target_window(), function()
                     vim.cmd(direction .. " split")
@@ -97,7 +97,7 @@ return {
                 vim.api.nvim_win_set_config(win_id, { border = "rounded" })
             end,
         })
-	end,
+    end,
     -- stylua: ignore
     keys = {
         { "<leader>X", function() require("mini.bufremove").delete(0, false) end, desc = "Delete Buffer", },
