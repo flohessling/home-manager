@@ -51,7 +51,7 @@ return {
 
         require("mini.files").setup({
             mappings = {
-                go_in_plus = "<Right>",
+                go_in_plus = "<Enter>",
                 go_out_plus = "<Left>",
             },
         })
