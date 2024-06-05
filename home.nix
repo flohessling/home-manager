@@ -10,7 +10,7 @@ in
 {
   home.username = "f";
   home.homeDirectory = "/Users/f";
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
   home.sessionVariables = { EDITOR = "nvim"; };
 
   programs.home-manager.enable = true;
@@ -20,14 +20,15 @@ in
   xdg.enable = true;
 
   # neovim nightly
-  nixpkgs.overlays = [
-    (import (builtins.fetchTarball {
-        url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
-        }))
-  ];
+  # nixpkgs.overlays = [
+  #   (import (builtins.fetchTarball {
+  #       url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
+  #       }))
+  # ];
 
   home.packages = with pkgs; [
-    # unstable.neovim
+    unstable.neovim-unwrapped
+    # neovim-nightly
     zsh
     oh-my-zsh
     htop
@@ -54,7 +55,6 @@ in
     docker-client
     git-crypt
     direnv
-    neovim-nightly
     natscli
     kubectl
     k9s
