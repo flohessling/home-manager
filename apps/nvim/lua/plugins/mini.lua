@@ -17,7 +17,7 @@ return {
         require("mini.trailspace").setup()
         require("mini.bufremove").setup()
         require("mini.cursorword").setup()
-        require("mini.statusline").setup()
+        -- require("mini.statusline").setup()
         require("mini.notify").setup()
         require("mini.splitjoin").setup()
         require("mini.misc").setup({ make_global = { "setup_auto_root" } })
