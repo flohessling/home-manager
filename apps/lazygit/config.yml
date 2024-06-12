@@ -1,3 +1,5 @@
+services:
+  "gitlab.shopware.com": "gitlab:gitlab.shopware.com"
 gui:
   theme:
     selectedLineBgColor:
