@@ -24,6 +24,7 @@ function M.find_files_from_project_git_root()
     if is_git_repo() then
         opts = {
             cwd = get_git_root(),
+            hidden = true,
         }
     end
     require("telescope.builtin").find_files(opts)

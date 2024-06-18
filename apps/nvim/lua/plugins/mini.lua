@@ -86,7 +86,7 @@ return {
                     local cur_entry_path = MiniFiles.get_fs_entry().path
                     local basedir = vim.fs.dirname(cur_entry_path)
                     MiniFiles.close()
-                    require("telescope.builtin").find_files({ cwd = basedir })
+                    require("telescope.builtin").find_files({ cwd = basedir, hidden = true })
                 end, { buffer = buf_id, desc = "grep in directory" })
             end,
         })

@@ -61,6 +61,17 @@ return {
                 selection_strategy = "reset",
                 sorting_strategy = "descending",
                 scroll_strategy = "cycle",
+                vimgrep_arguments = {
+                    "rg",
+                    "--color=never",
+                    "--no-heading",
+                    "--with-filename",
+                    "--line-number",
+                    "--column",
+                    "--smart-case",
+                    -- the following are non standard arguments
+                    "--hidden",
+                },
             },
 
             pickers = {
