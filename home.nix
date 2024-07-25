@@ -47,9 +47,10 @@ in
     ffmpeg
     lazygit
     coreutils-prefixed
-    unstable.ssm-session-manager-plugin
+    ssm-session-manager-plugin
     temporal-cli
     glab
+    gh
     act
     docker-compose
     docker-client
