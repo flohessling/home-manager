@@ -59,6 +59,7 @@ in
     natscli
     kubectl
     k9s
+    azure-cli
     cargo
     nodejs
     nodePackages.pnpm
