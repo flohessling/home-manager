@@ -48,6 +48,7 @@ in
     lazygit
     coreutils-prefixed
     ssm-session-manager-plugin
+    golangci-lint
     temporal-cli
     glab
     gh
@@ -60,6 +61,7 @@ in
     kubectl
     k9s
     azure-cli
+    trivy
     cargo
     nodejs
     nodePackages.pnpm
