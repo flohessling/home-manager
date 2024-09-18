@@ -19,16 +19,8 @@ in
 
   xdg.enable = true;
 
-  # neovim nightly
-  # nixpkgs.overlays = [
-  #   (import (builtins.fetchTarball {
-  #       url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
-  #       }))
-  # ];
-
   home.packages = with pkgs; [
     unstable.neovim-unwrapped
-    # neovim-nightly
     zsh
     oh-my-zsh
     htop
@@ -105,7 +97,6 @@ in
     enable = true;
     package = unstable.git;
 
-    # signing.key = "0x48F495E9FD7D11E2";
     signing.key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDn2PfoRVF81hGahkDlH0D6LyLzf4S8CbDHQku0aK+Eu";
     signing.signByDefault = true;
 
@@ -184,7 +175,6 @@ in
       sso = "aws sso login --sso-session root";
       cat = "bat -pp --theme \"base16\"";
       bcat = "bat --theme \"base16\"";
-      # ykrestart = "gpgconf --reload scdaemon && gpgconf --kill gpg-agent && gpg-connect-agent updatestartuptty /bye";
       t = "tmux new -As0";
       v = "nvim";
       vi = "nvim";
