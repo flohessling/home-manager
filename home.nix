@@ -213,6 +213,7 @@ in
     ".local/bin/tmux-sessionizer".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/tmux-sessionizer;
     ".local/bin/update-tf.sh".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/update-tf.sh;
     ".local/bin/update-tg.sh".source = config.lib.file.mkOutOfStoreSymlink ./apps/zsh/update-tg.sh;
+    ".config/wezterm/".source = config.lib.file.mkOutOfStoreSymlink ./apps/wezterm;
     ".config/lvim/config.lua".source = config.lib.file.mkOutOfStoreSymlink ./apps/lvim/config.lua;
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./apps/nvim;
     ".config/lazygit/config.yml".source = config.lib.file.mkOutOfStoreSymlink ./apps/lazygit/config.yml;
