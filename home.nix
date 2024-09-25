@@ -160,6 +160,9 @@ in
         "$GOPATH/bin"
         "$HOME/.local/bin"
         "${pkgs.nodejs}/bin"
+        "/opt/homebrew/bin"
+        "/opt/homebrew/sbin"
+        "/Applications/WezTerm.app/Contents/MacOS"
       ];
     };
     sessionVariables = {
