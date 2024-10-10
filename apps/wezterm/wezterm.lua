@@ -13,6 +13,7 @@ config.macos_window_background_blur = 25
 config.adjust_window_size_when_changing_font_size = false
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
+config.tab_max_width = 32
 config.bold_brightens_ansi_colors = "BrightAndBold"
 config.default_cursor_style = "SteadyBlock"
 config.front_end = "WebGpu"
@@ -23,6 +24,12 @@ config.inactive_pane_hsb = {
 
 -- use CTRL+^ in vim
 config.use_dead_keys = false
+
+-- key bindings
+config.keys = {
+	{ key = "d", mods = "CMD", action = wezterm.action.SplitHorizontal },
+	{ key = "D", mods = "CMD", action = wezterm.action.SplitVertical },
+}
 
 -- color scheme
 config.colors = {
