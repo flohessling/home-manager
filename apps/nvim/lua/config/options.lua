@@ -6,7 +6,7 @@ vim.g.maplocalleader = " "
 
 vim.opt.hlsearch = true -- Set highlight on search
 vim.opt.number = true -- Make line numbers default
-vim.opt.relativenumber = true -- Use relative line numbers
+-- vim.opt.relativenumber = true -- Use relative line numbers
 vim.opt.mouse = "a" -- Enable mouse mode
 vim.opt.undofile = true -- Save undo history
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir" -- Use directory for undo history

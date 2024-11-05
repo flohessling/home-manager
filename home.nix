@@ -52,7 +52,7 @@ in
     natscli
     kubectl
     k9s
-    azure-cli
+    # azure-cli
     trivy
     cargo
     nodejs
